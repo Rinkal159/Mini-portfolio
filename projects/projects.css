@@ -1,0 +1,78 @@
+.project-cont {
+    margin: 4rem 0 8rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.individual-project {
+    box-shadow: 0 0 0 2px var(--royal-blue);
+    border-radius: 50px;
+    box-shadow: rgba(9, 30, 66, 0.25) 1px 7px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+}
+
+
+.project-img {
+    height: 350px;
+    width: 500px;
+    background-size: contain;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.name-time {
+    padding-bottom: .3rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.project-name {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.project-time {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0 1.7rem 0 0;
+}
+
+.project-desc {
+    font-family: "Unna", serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.8rem;
+}
+
+.project-lang {
+    font-family: "Unna", serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.project-github {
+    padding: 8px 14px;
+    border: none;
+    font-size: .9rem;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px var(--royal-blue);
+    font-weight: 500;
+    transition: .3s ease-out;
+    background-color: white;
+    display: inline-block;
+}
+
+.project-github:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 2.3px var(--royal-blue);
+}
