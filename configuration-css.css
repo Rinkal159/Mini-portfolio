@@ -1,0 +1,102 @@
+/** fonts  */
+/* Quicksand */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Serif+Display:ital@0;1&family=Jersey+10&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unna:ital@1&display=swap');
+
+/* Unna */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Serif+Display:ital@0;1&family=Jersey+10&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:opsz,wght@5..1200,300..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Cormorant Garamond */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Serif+Display:ital@0;1&family=Jersey+10&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unna:ital@1&display=swap');
+
+
+:root {
+    --royal-blue: #001754;
+    --gradient-blue: #e9f5ff;
+    --dark-gradient-blue: #dff1ff;
+    --touch-btn: #002076;
+    --mission: #c7e5ff;
+    --background: #d3eaff;
+    --dark-background: #b8dcff;
+    --neutral-blue: #bbdeff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--gradient-blue);
+}
+
+ul {
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+/** Commonn classes */
+.parent-container {
+    max-width: 85vw;
+    margin-inline: auto;
+}
+
+/* about me, project, hobbies, contact */
+.section-heading {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 3.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2.2rem;
+    position: relative;
+}
+
+/* about me, hobbies, individual projects, navbar ele */
+.special-underline::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    border-radius: 20px;
+    width: 100%;
+    background-color: var(--royal-blue);
+    left: 0;
+    bottom: 0;
+}
+
+/* about me, hobbies */
+.section-para {
+    font-family: "Unna", serif;
+    font-size: 1.25rem;
+    letter-spacing: .03rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* hero-section, about me page */
+
+.img {
+    width: 400px;
+    border-radius: 100%;
+    background-size: contain;
+    border: 4px dashed var(--royal-blue);
+    padding: .3rem;
+}
+
+.royal-anchor {
+    color: black;
+}
+.white-anchor{
+    color: white;
+}
