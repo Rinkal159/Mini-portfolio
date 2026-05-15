@@ -1,0 +1,299 @@
+
+
+
+
+
+
+
+/** main */
+.main-flex {
+    height: 70vh;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-left {
+    width: 50%;
+}
+
+.main-right {
+    position: absolute;
+    right: 8%;
+}
+
+.intro,
+.desc {
+    font-family: "Unna", serif;
+    font-style: normal;
+    font-size: 1.25rem;
+    letter-spacing: .03rem;
+    font-weight: 500;
+    padding: 0 .5rem;
+}
+
+.prof {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 6rem;
+    font-weight: 400;
+    word-spacing: 0;
+    color: var(--royal-blue);
+    padding: 0 0 1rem 0;
+}
+
+.span {
+    font-weight: 700;
+}
+
+.btn1,
+.btn2 {
+    padding: 8px 14px;
+    border: none;
+    font-size: .9rem;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px var(--royal-blue);
+    margin: 1.7rem .5rem;
+    font-weight: 500;
+    transition: .3s ease-out;
+    display: inline-block;
+}
+
+.btn1 {
+    background-color: var(--touch-btn);
+    color: white;
+}
+
+.btn2 {
+    background-color: white;
+}
+
+.btn1:hover,
+.btn2:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 2.3px var(--royal-blue);
+}
+
+/** mission  */
+.article {
+    background-color: var(--mission);
+}
+
+.mission {
+    color: var(--royal-blue);
+    padding: 2rem 0;
+    font-size: 1.33rem;
+    font-family: "Cormorant Garamond", serif;
+}
+
+
+/** background  */
+.background-cont {
+    margin-top: 3rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.background-left {
+    background-color: var(--background);
+    padding: 1rem;
+    border-radius: 20px;
+    width: 32%;
+}
+
+.bg-boxes {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.bg-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.bg-heading,
+.bg-para {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--royal-blue);
+}
+
+.background-right {
+    width: 50%;
+}
+
+.about-me-btn {
+    margin: 0;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+
+/** projects  */
+.projects {
+    background-color: var(--background);
+}
+
+.project-cont {
+    margin-top: 5rem;
+}
+
+.project-heading {
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 0;
+}
+
+.project-heading::after {
+    transform: scale(0);
+}
+
+.project-list {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 4rem;
+}
+
+.individual-project-boxes {
+    box-shadow: 0 0 0 5.5px var(--neutral-blue);
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Unna", serif;
+    padding-bottom: 1rem;
+    position: relative;
+    color: var(--touch-btn);
+}
+
+.project-intro {
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.project-github {
+    background-color: var(--background);
+    margin: 1rem 0;
+}
+
+.more-projects-cont {
+    display: flex;
+    justify-content: center;
+}
+
+.more-projects-btn {
+    font-size: 1.1rem;
+    margin-top: 3rem;
+}
+
+
+/** Hobbies  */
+.hobbies-cont {
+    margin-top: 5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hobbies-left {
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.hobbies-heading {
+    text-align: center;
+}
+
+.hobbies-right {
+    width: 50%;
+}
+
+.hobbies-right {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+}
+
+.hobby-name {
+    padding: 6px 20px;
+    background-color: var(--background);
+    border: 3px dashed var(--royal-blue);
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-family: "Unna", serif;
+}
+
+.individual-hobby {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: start;
+}
+
+.hobby-intro {
+    font-size: 1.1rem;
+    padding-left: .4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/** contact */
+.contact {
+    background-color: var(--background);
+}
+
+.contact-cont {
+    margin-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.contact-heading::after {
+    transform: scale(0);
+}
+
+.contact-heading {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 0;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.contact-name {
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: "Unna", serif;
+}
+
+.contact-value {
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+
+
+
