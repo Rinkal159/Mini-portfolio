@@ -14,8 +14,16 @@ p {
     width: 40%;
 }
 
-.img {
+.about-me-img {
+    width: 410px;
+    border-radius: 100%;
+    background-size: contain;
+    padding: .3rem;
     margin-top: 4rem;
+}
+
+.about-me-img {
+    border: none;
 }
 
 .heading-cont {
@@ -52,11 +60,11 @@ p {
 .individual-skill-heading, .individial-goal-heading {
     font-family: "Cormorant Garamond", serif;
     font-size: 1.4rem;
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .individual-skill-heading {
-    padding-bottom: .5rem;
+    padding-bottom: .3rem;
     font-size: 1.5rem;
 }
 
