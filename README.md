@@ -60,9 +60,9 @@ Mini Portfolio is a personal branding website that presents an individual's work
 ## Screenshots
 
 ![Homepage](screenshots/dashboard.png "Homepage")
-![About Me Section](screenshots/about.png "About Me Section with Expand Feature")
+![About Me Section](screenshots/about-me.png "About Me Section with Expand Feature")
 ![Projects Showcase](screenshots/projects.png "Projects Section")
-![Hobbies](screenshots/hobbies.png "Hobbies with Color Coding")
+![Hobbies](screenshots/hobbies-certifications.png "Hobbies with Color Coding")
 
 ---
 
