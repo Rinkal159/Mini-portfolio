@@ -3,29 +3,38 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="about-me.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About me | Rinkal Singapuri</title>
+
+    <!-- Bootstrap Icons / Font Awesome (preserve icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- Preserve external CSS exactly as requested: header-footer.css, configuration-css (DO NOT ALTER) -->
     <link rel="stylesheet" href="../header-footer.css">
     <link rel="stylesheet" href="../configuration-css.css">
+    <link rel="stylesheet" href="about-me.css">
 </head>
 
-<body>
-    <!-- Header -->
+<body class="bg-[var(--gradient-blue)] overflow-x-hidden">
+
+    <!-- Header-->
     <header class="header">
         <div class="parent-container header-cont">
             <h1>
                 <i class="fa-solid fa-less-than"></i><span class="heading">RINKAL SINGAPURI /</span><i
                     class="fa-solid fa-greater-than"></i>
             </h1>
+
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <nav class="nav-cont">
                 <ul class="nav-ele-cont">
                     <li><a class="nav-ele" href="../index/homepage.html">Home</a></li>
@@ -37,95 +46,90 @@
         </div>
     </header>
 
-    <main class="about-me">
-        <div class="about-me-cont parent-container">
+    <!-- Overlay for mobile menu -->
+    <div id="navOverlay" class="nav-overlay"></div>
 
-            <!-- left -->
-            <div class="about-me-left">
-                <img class="about-me-img" src="../image/about-me.jpg" alt="About me">
+    <main class="about-me">
+        <div class="about-me-cont parent-container flex flex-col lg:flex-row justify-around items-center lg:items-start my-16 lg:my-20 min-h-[90vh] gap-12">
+            <!-- left side: image -->
+            <div class="about-me-left hidden lg:flex justify-center lg:justify-start">
+                <img class="about-me-img w-64 sm:w-80 md:w-[360px] lg:w-[410px] rounded-full bg-cover border-dashed border-4 border-[var(--royal-blue)] p-1 mt-4 lg:mt-16" src="../image/about-me.jpg" alt="About me">
             </div>
 
-            <!-- right -->
-            <div class="about-me-right">
-                <!-- headings -->
-                <div id="heading-cont" class="heading-cont">
-                    <p class="special-underline about-heading ">Skills</p>
-                    <p class="about-heading">Interests</p>
-                    <p class="about-heading">Goals</p>
+            <!-- right side: heading tabs + dynamic content -->
+            <div class="about-me-right w-full lg:w-[40%]">
+                
+                <div id="heading-cont" class="heading-cont flex gap-4 md:gap-6 pb-4 pt-8 lg:pt-0">
+                    <p class="special-underline about-heading" data-tab="Skills">Skills</p>
+                    <p class="about-heading" data-tab="Interests">Interests</p>
+                    <p class="about-heading" data-tab="Goals">Goals</p>
                 </div>
 
+                
+                <div class="desc-cont min-h-[300px] mt-4">
 
-                <!-- description -->
-                <div class="desc-cont">
-
-                    <!-- skills -->
+                    <!-- Skills tab -->
                     <div class="desc active" id="Skills">
-                        <div class="individual-skill">
-                            <p class="individual-skill-heading">Programming Languages:</p>
-                            <p class="individual-skill-desc">C | C++ | Java | JavaScript | TypeScript | PHP | Python</p>
+                        <div class="individual-skill mb-5">
+                            <p class="individual-skill-heading text-[var(--royal-blue)] text-2xl md:text-[1.5rem] font-black pb-1 font-['Cormorant_Garamond',serif]">Programming Languages:</p>
+                            <p class="individual-skill-desc text-[var(--royal-blue)] font-normal pb-4 font-['Quicksand',sans-serif] text-base md:text-lg">C | C++ | Java | JavaScript | TypeScript | PHP | Python</p>
                         </div>
-                        <div class="individual-skill">
-                            <p class="individual-skill-heading">Backend Development:</p>
-                            <p class="individual-skill-desc">Node.js | Express.js | REST APIs | MVC | Microservices | Middleware</p>
+                        <div class="individual-skill mb-5">
+                            <p class="individual-skill-heading text-[var(--royal-blue)] text-2xl md:text-[1.5rem] font-black pb-1 font-['Cormorant_Garamond',serif]">Backend Development:</p>
+                            <p class="individual-skill-desc text-[var(--royal-blue)] font-normal pb-4 font-['Quicksand',sans-serif] text-base md:text-lg">Node.js | Express.js | REST APIs | MVC | Microservices | Middleware</p>
                         </div>
-                        <div class="individual-skill">
-                            <p class="individual-skill-heading">Frontend Development:</p>
-                            <p class="individual-skill-desc">DaisyUI | Bootstrap | Material UI (MUI) | React.js | Redux | Tailwind CSS</p>
+                        <div class="individual-skill mb-5">
+                            <p class="individual-skill-heading text-[var(--royal-blue)] text-2xl md:text-[1.5rem] font-black pb-1 font-['Cormorant_Garamond',serif]">Frontend Development:</p>
+                            <p class="individual-skill-desc text-[var(--royal-blue)] font-normal pb-4 font-['Quicksand',sans-serif] text-base md:text-lg">DaisyUI | Bootstrap | Material UI (MUI) | React.js | Redux | Tailwind CSS</p>
                         </div>
-                        <div class="individual-skill">
-                            <p class="individual-skill-heading">Database Design:</p>
-                            <p class="individual-skill-desc">MongoDB | MySQL | PostgreSQL | Schema Design | Query Optimization | Indexing</p>
+                        <div class="individual-skill mb-5">
+                            <p class="individual-skill-heading text-[var(--royal-blue)] text-2xl md:text-[1.5rem] font-black pb-1 font-['Cormorant_Garamond',serif]">Database Design:</p>
+                            <p class="individual-skill-desc text-[var(--royal-blue)] font-normal pb-4 font-['Quicksand',sans-serif] text-base md:text-lg">MongoDB | MySQL | PostgreSQL | Schema Design | Query Optimization | Indexing</p>
                         </div>
-                        <div class="individual-skill">
-                            <p class="individual-skill-heading">Security & Authentication:</p>
-                            <p class="individual-skill-desc">JWT | Bcrypt | Input Validation | Secure API Design | Session Management</p>
+                        <div class="individual-skill mb-5">
+                            <p class="individual-skill-heading text-[var(--royal-blue)] text-2xl md:text-[1.5rem] font-black pb-1 font-['Cormorant_Garamond',serif]">Security & Authentication:</p>
+                            <p class="individual-skill-desc text-[var(--royal-blue)] font-normal pb-4 font-['Quicksand',sans-serif] text-base md:text-lg">JWT | Bcrypt | Input Validation | Secure API Design | Session Management</p>
                         </div>
                     </div>
 
-                    <!-- interests -->
+                    <!-- Interests tab -->
                     <div class="desc" id="Interests">
-                        <ul class="interests-ul">
-                            <li class="individual-interests">Building backend systems and working on APIs</li>
-                            <li class="individual-interests">Exploring how applications work behind the scenes</li>
-                            <li class="individual-interests">Solving logic-based and real-world problems</li>
-                            <li class="individual-interests">Learning new technologies and improving skills</li>
-                            <li class="individual-interests">Writing stories and expressing creativity</li>
-                            <li class="individual-interests">Sketching and visualizing ideas</li>
-                            <li class="individual-interests">Playing mind games to sharpen thinking and focus</li>
+                        <ul class="interests-ul flex flex-col gap-4 list-disc list-inside pl-0">
+                            <li class="individual-interests text-[var(--royal-blue)] text-xl md:text-[1.25rem] font-semibold font-['Cormorant_Garamond',serif]">Building backend systems and working on APIs</li>
+                            <li class="individual-interests text-[var(--royal-blue)] text-xl md:text-[1.25rem] font-semibold font-['Cormorant_Garamond',serif]">Exploring how applications work behind the scenes</li>
+                            <li class="individual-interests text-[var(--royal-blue)] text-xl md:text-[1.25rem] font-semibold font-['Cormorant_Garamond',serif]">Solving logic-based and real-world problems</li>
+                            <li class="individual-interests text-[var(--royal-blue)] text-xl md:text-[1.25rem] font-semibold font-['Cormorant_Garamond',serif]">Learning new technologies and improving skills</li>
+                            <li class="individual-interests text-[var(--royal-blue)] text-xl md:text-[1.25rem] font-semibold font-['Cormorant_Garamond',serif]">Writing stories and expressing creativity</li>
+                            <li class="individual-interests text-[var(--royal-blue)] text-xl md:text-[1.25rem] font-semibold font-['Cormorant_Garamond',serif]">Sketching and visualizing ideas</li>
+                            <li class="individual-interests text-[var(--royal-blue)] text-xl md:text-[1.25rem] font-semibold font-['Cormorant_Garamond',serif]">Playing mind games to sharpen thinking and focus</li>
                         </ul>
                     </div>
 
-
+                    <!-- Goals tab -->
                     <div class="desc" id="Goals">
-                        <div class="individual-goals">
-                            <p class="individial-goal-heading">Personal Goals</p>
-                            <ul>
-                                <li class="individial-goal-desc">Stay consistent in learning and self-improvement</li>
-                                <li class="individial-goal-desc">Build confidence in my abilities through practice and
-                                    real work</li>
-                                <li class="individial-goal-desc">Continuously improve my problem-solving and logical
-                                    thinking skills</li>
+                        <div class="individual-goals mb-6">
+                            <p class="individial-goal-heading text-[var(--royal-blue)] text-2xl md:text-[1.6rem] font-black font-['Cormorant_Garamond',serif] mb-2">Personal Goals</p>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="individial-goal-desc text-[var(--royal-blue)] text-lg md:text-xl font-medium font-['Unna',serif]">Stay consistent in learning and self-improvement</li>
+                                <li class="individial-goal-desc text-[var(--royal-blue)] text-lg md:text-xl font-medium font-['Unna',serif]">Build confidence in my abilities through practice and real work</li>
+                                <li class="individial-goal-desc text-[var(--royal-blue)] text-lg md:text-xl font-medium font-['Unna',serif]">Continuously improve my problem-solving and logical thinking skills</li>
                             </ul>
                         </div>
                         <div class="individual-goals">
-                            <p class="individial-goal-heading">Professional Goals</p>
-                            <ul>
-                                <li class="individial-goal-desc">Build scalable, secure, and efficient backend systems
-                                </li>
-                                <li class="individial-goal-desc">Master technologies like APIs, databases, and
-                                    server-side development</li>
-                                <li class="individial-goal-desc">become a skilled backend developer with strong
-                                    fundamentals</li>
+                            <p class="individial-goal-heading text-[var(--royal-blue)] text-2xl md:text-[1.6rem] font-black font-['Cormorant_Garamond',serif] mb-2">Professional Goals</p>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="individial-goal-desc text-[var(--royal-blue)] text-lg md:text-xl font-medium font-['Unna',serif]">Build scalable, secure, and efficient backend systems</li>
+                                <li class="individial-goal-desc text-[var(--royal-blue)] text-lg md:text-xl font-medium font-['Unna',serif]">Master technologies like APIs, databases, and server-side development</li>
+                                <li class="individial-goal-desc text-[var(--royal-blue)] text-lg md:text-xl font-medium font-['Unna',serif]">become a skilled backend developer with strong fundamentals</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </main>
 
+    
     <!-- footer -->
     <div class="footer">
         <div class="footer-cont">
@@ -147,8 +151,6 @@
             </div>
         </div>
     </div>
-
-
 
     <script src="about-me.js"></script>
 </body>

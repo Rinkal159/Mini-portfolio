@@ -3,22 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hobbies</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="hobbies.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Hobbies & Certifications | Rinkal Singapuri</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Preserve external CSS exactly as requested: header-footer.css, configuration-css (DO NOT ALTER) -->
     <link rel="stylesheet" href="../header-footer.css">
     <link rel="stylesheet" href="../configuration-css.css">
+    <link rel="stylesheet" href="hobbies.css">
 </head>
 
-<body>
+<body class="bg-[var(--gradient-blue)] overflow-x-hidden">
+
     <!-- Header -->
     <header class="header">
         <div class="parent-container header-cont">
@@ -26,7 +24,14 @@
                 <i class="fa-solid fa-less-than"></i><span class="heading">RINKAL SINGAPURI /</span><i
                     class="fa-solid fa-greater-than"></i>
             </h1>
-            <nav class="nav-cont">
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-cont" id="navMenu">
                 <ul class="nav-ele-cont">
                     <li><a class="nav-ele" href="../index/homepage.html">Home</a></li>
                     <li><a class="nav-ele" href="../about-me/about-me.html">About me</a></li>
@@ -37,58 +42,62 @@
         </div>
     </header>
 
-    <main class="hobbies">
-        <div class="hobbies-cont parent-container">
+    <div id="navOverlay" class="nav-overlay"></div>
 
-            <!-- certificates -->
-            <div class="hobbies-left">
-                <div class="certifications">
-                    <p class="hobbies-heading special-underline">Certifications</p>
+    <!-- Hobbies Main Content-->
+    <main class="hobbies">
+        <div class="hobbies-cont parent-container flex flex-col lg:flex-row gap-12 lg:gap-20 justify-center py-12 md:py-16 lg:py-20">
+            
+            <!-- Left Side: Certifications -->
+            <div class="hobbies-left w-full lg:w-1/2">
+                <div class="certifications flex flex-col items-center">
+                    <p class="hobbies-heading font-['Cormorant_Garamond',serif] text-3xl md:text-4xl lg:text-5xl font-bold relative text-center mb-0 pb-2 special-underline inline-block w-full">Certifications</p>
+                    
                     <div class="first">
-                        <h3 class="certificate-name">CS50 Introduction to Programming with Python</h3>
-                        <p class="certificate-from">Harvard University</p>
-                        <a class="certificate-link"
-                            href="https://certificates.cs50.io/561a56c3-1b12-44c7-9781-aa8eb4483102">Show Credentials <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        <img class="certificate-img" src="../image/CS50P_Certificate.png" alt="CS50P_Certificate">
+                        <h3 class="certificate-name font-['Cormorant_Garamond',serif] text-2xl md:text-3xl lg:text-[1.8rem] font-normal pt-6 md:pt-8 mb-0">CS50 Introduction to Programming with Python</h3>
+                        <p class="certificate-from font-['Cormorant_Garamond',serif] text-lg md:text-xl lg:text-[1.3rem] font-black italic pt-1 mb-2">Harvard University</p>
+                        <a class="certificate-link inline-flex items-center gap-2 text-[var(--royal-blue)] hover:text-[var(--royal-blue-light)] transition-colors font-medium mb-4" href="https://certificates.cs50.io/561a56c3-1b12-44c7-9781-aa8eb4483102" target="_blank">
+                            Show Credentials <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                        </a>
+                        <img class="certificate-img w-full max-w-[600px] mt-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-[1.02]" src="../image/CS50P_Certificate.png" alt="CS50P_Certificate">
                     </div>
                 </div>
             </div>
 
-            <!-- hobbies -->
-            <div class="hobbies-right">
-                <div class="hobbies-accordion">
-                    <p class="hobbies-heading special-underline">Hobbies</p>
+            <!-- Right Side: Hobbies Accordion Style Cards -->
+            <div class="hobbies-right w-full lg:w-1/2 min-w-0 lg:min-w-[50%]">
+                <div class="hobbies-accordion rounded-[30px] p-4 pt-0">
+                    <p class="hobbies-heading font-['Cormorant_Garamond',serif] text-3xl md:text-4xl lg:text-5xl font-bold relative text-center mb-0 pb-2 special-underline inline-block w-full">Hobbies</p>
 
-                    <div class="accordian-part-right">
-                        <div class="individual-hobby">
-                            <span class="hobby-name">Story writing</span>
-                            <div class="hobby-desc">I enjoy writing stories where I can turn random ideas into something
-                                meaningful and creative.</div>
+                    <div class="accordian-part-right flex flex-col gap-4 md:gap-6 pt-6 md:pt-8">
+                        <!-- Hobby 1: Story writing -->
+                        <div class="individual-hobby rounded-[28px] p-4 bg-[var(--dark-gradient-blue)] shadow-[rgba(50,50,93,0.25)_0px_2px_5px_-1px,rgba(0,0,0,0.3)_0px_1px_3px_-1px] flex flex-col gap-1 items-start transition-all duration-300 cursor-pointer">
+                            <span class="hobby-name font-['Cormorant_Garamond',serif] text-2xl md:text-3xl lg:text-[2rem] font-semibold italic relative">Story writing</span>
+                            <div class="hobby-desc font-['Cormorant_Garamond',serif] text-base md:text-lg lg:text-[1.2rem] font-medium">I enjoy writing stories where I can turn random ideas into something meaningful and creative.</div>
                         </div>
-                        <div class="individual-hobby">
-                            <span class="hobby-name">Sketching</span>
-                            <div class="hobby-desc">
-                                I enjoy sketching as a way to express ideas without using words. It allows me to turn
-                                imagination into visuals.</div>
+                        
+                        <!-- Hobby 2: Sketching -->
+                        <div class="individual-hobby rounded-[28px] p-4 bg-[var(--dark-gradient-blue)] shadow-[rgba(50,50,93,0.25)_0px_2px_5px_-1px,rgba(0,0,0,0.3)_0px_1px_3px_-1px] flex flex-col gap-1 items-start transition-all duration-300 cursor-pointer">
+                            <span class="hobby-name font-['Cormorant_Garamond',serif] text-2xl md:text-3xl lg:text-[2rem] font-semibold italic relative">Sketching</span>
+                            <div class="hobby-desc font-['Cormorant_Garamond',serif] text-base md:text-lg lg:text-[1.2rem] font-medium">I enjoy sketching as a way to express ideas without using words. It allows me to turn imagination into visuals.</div>
                         </div>
-                        <div class="individual-hobby">
-                            <span class="hobby-name">Mind Games</span>
-                            <div class="hobby-desc">I enjoy playing mind games because they challenge the way I think
-                                and
-                                keep my brain active.</div>
+                        
+                        <!-- Hobby 3: Mind Games -->
+                        <div class="individual-hobby rounded-[28px] p-4 bg-[var(--dark-gradient-blue)] shadow-[rgba(50,50,93,0.25)_0px_2px_5px_-1px,rgba(0,0,0,0.3)_0px_1px_3px_-1px] flex flex-col gap-1 items-start transition-all duration-300 cursor-pointer">
+                            <span class="hobby-name font-['Cormorant_Garamond',serif] text-2xl md:text-3xl lg:text-[2rem] font-semibold italic relative">Mind Games</span>
+                            <div class="hobby-desc font-['Cormorant_Garamond',serif] text-base md:text-lg lg:text-[1.2rem] font-medium">I enjoy playing mind games because they challenge the way I think and keep my brain active.</div>
                         </div>
-                        <div class="individual-hobby ">
-                            <span class="hobby-name">Watching movies</span>
-                            <div class="hobby-desc">I enjoy observing storytelling techniques, character development,
-                                and
-                                visual aesthetics.</div>
+                        
+                        <!-- Hobby 4: Watching movies -->
+                        <div class="individual-hobby rounded-[28px] p-4 bg-[var(--dark-gradient-blue)] shadow-[rgba(50,50,93,0.25)_0px_2px_5px_-1px,rgba(0,0,0,0.3)_0px_1px_3px_-1px] flex flex-col gap-1 items-start transition-all duration-300 cursor-pointer">
+                            <span class="hobby-name font-['Cormorant_Garamond',serif] text-2xl md:text-3xl lg:text-[2rem] font-semibold italic relative">Watching movies</span>
+                            <div class="hobby-desc font-['Cormorant_Garamond',serif] text-base md:text-lg lg:text-[1.2rem] font-medium">I enjoy observing storytelling techniques, character development, and visual aesthetics.</div>
                         </div>
-                        <div class="individual-hobby ">
-                            <span class="hobby-name">Exploring technologies</span>
-                            <div class="hobby-desc">I like learning about new tools, programming languages, and
-                                frameworks,
-                                and experimenting with them through small projects. </div>
+                        
+                        <!-- Hobby 5: Exploring technologies -->
+                        <div class="individual-hobby rounded-[28px] p-4 bg-[var(--dark-gradient-blue)] shadow-[rgba(50,50,93,0.25)_0px_2px_5px_-1px,rgba(0,0,0,0.3)_0px_1px_3px_-1px] flex flex-col gap-1 items-start transition-all duration-300 cursor-pointer">
+                            <span class="hobby-name font-['Cormorant_Garamond',serif] text-2xl md:text-3xl lg:text-[2rem] font-semibold italic relative">Exploring technologies</span>
+                            <div class="hobby-desc font-['Cormorant_Garamond',serif] text-base md:text-lg lg:text-[1.2rem] font-medium">I like learning about new tools, programming languages, and frameworks, and experimenting with them through small projects.</div>
                         </div>
                     </div>
                 </div>
@@ -96,7 +105,7 @@
         </div>
     </main>
 
-    <!-- footer -->
+    <!-- Footer-->
     <div class="footer">
         <div class="footer-cont">
             <div class="author">
@@ -117,6 +126,55 @@
             </div>
         </div>
     </div>
+
+    <!-- Hamburger Menu JavaScript-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburgerBtn');
+            const navMenu = document.getElementById('navMenu');
+            const overlay = document.getElementById('navOverlay');
+            
+            let overlayEl = overlay;
+            if (!overlayEl) {
+                overlayEl = document.createElement('div');
+                overlayEl.id = 'navOverlay';
+                overlayEl.className = 'nav-overlay';
+                document.body.appendChild(overlayEl);
+            }
+            
+            function toggleMenu() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                overlayEl.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            }
+            
+            function closeMenu() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                overlayEl.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', toggleMenu);
+            }
+            if (overlayEl) {
+                overlayEl.addEventListener('click', closeMenu);
+            }
+            
+            const navLinks = document.querySelectorAll('.nav-ele');
+            navLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+            
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 576 && navMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

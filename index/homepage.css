@@ -1,52 +1,276 @@
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
 
-
-
-
-
-
-
-/** main */
-.main-flex {
-    height: 70vh;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.main-left {
-    width: 50%;
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.main-right {
-    position: absolute;
-    right: 8%;
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+@keyframes borderGlow {
+    0% {
+        border-color: var(--royal-blue);
+        box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.2);
+    }
+
+    50% {
+        border-color: var(--royal-blue-light);
+        box-shadow: 0 0 15px 3px rgba(59, 130, 246, 0.4);
+    }
+
+    100% {
+        border-color: var(--royal-blue);
+        box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.2);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes rotateGlow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.main-flex,
+.background-cont,
+.project-list .individual-project-boxes,
+.hobbies-cont,
+.contact-cont,
+.background-left,
+.background-right,
+.hobbies-left,
+.hobbies-right {
+    opacity: 0;
+}
+
+.main-flex.revealed,
+.background-cont.revealed,
+.project-list .individual-project-boxes.revealed,
+.hobbies-cont.revealed,
+.contact-cont.revealed,
+.background-left.revealed,
+.background-right.revealed,
+.hobbies-left.revealed,
+.hobbies-right.revealed {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hobbies-right .individual-hobby:nth-child(1).revealed {
+    animation: fadeInRight 0.5s ease forwards;
+}
+
+.hobbies-right .individual-hobby:nth-child(2).revealed {
+    animation: fadeInRight 0.6s ease forwards;
+}
+
+.hobbies-right .individual-hobby:nth-child(3).revealed {
+    animation: fadeInRight 0.7s ease forwards;
+}
+
+.bg-boxes:hover {
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.15);
+    border-left: 3px solid var(--royal-blue-light);
+}
+
+.prof:hover {
+    background: linear-gradient(135deg, var(--royal-blue), var(--royal-blue-light), #60a5fa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transform: scale(1.02);
+}
+
+.project-github:hover {
+    transform: scale(1.05);
+    background-color: var(--dark-background);
+}
+
+.hobby-name:hover {
+    animation: glowPulse 0.6s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.individual-project-boxes:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 35px rgba(30, 58, 138, 0.2), 0 0 0 5.5px var(--dark-background);
+}
+
+.article:hover .mission {
+    transform: translateX(10px);
+    letter-spacing: 1px;
+}
+
+.contact-heading:hover {
+    background: linear-gradient(135deg, var(--royal-blue), var(--royal-blue-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.contact-value:hover {
+    color: var(--royal-blue-light);
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+.individual-contact:hover .contact-name {
+    color: var(--royal-blue-light);
+}
+
+/* maintain about-heading scale */
+.about-heading:hover {
+    transform: scale(1.03);
+}
+
+.project-heading:hover {
+    transform: scale(1.02);
+}
+
+.hobbies-heading:hover {
+    transform: scale(1.03);
+}
+
+.background-left:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(30, 58, 138, 0.1);
+}
+
+.background-right:hover {
+    transform: translateX(5px);
+}
+
+.hobbies-left:hover {
+    transform: translateX(5px);
+}
+
+.more-projects-btn:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.2);
+}
+
+.article:hover {
+    background: linear-gradient(135deg, var(--mission), #bfdbfe);
+}
+
+.project-github {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+body,
 .intro,
-.desc {
-    font-family: "Unna", serif;
-    font-style: normal;
-    font-size: 1.25rem;
-    letter-spacing: .03rem;
-    font-weight: 500;
-    padding: 0 .5rem;
+.desc,
+.prof,
+.bg-heading,
+.bg-para,
+.mission,
+.contact-name,
+.contact-value,
+.hobby-name,
+.hobby-intro {
+    font-family: inherit;
 }
 
-.prof {
-    font-family: "Cormorant Garamond", serif;
-    font-style: italic;
-    font-size: 6rem;
-    font-weight: 400;
-    word-spacing: 0;
-    color: var(--royal-blue);
-    padding: 0 0 1rem 0;
+.parent-container {
+    max-width: 85vw;
+    margin-inline: auto;
 }
 
-.span {
-    font-weight: 700;
+.img {
+    width: 400px;
+    border-radius: 100%;
+    background-size: contain;
+    border: 4px dashed var(--royal-blue);
+    padding: .3rem;
 }
 
 .btn1,
@@ -58,8 +282,11 @@
     box-shadow: 0 0 0 2px var(--royal-blue);
     margin: 1.7rem .5rem;
     font-weight: 500;
-    transition: .3s ease-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
     display: inline-block;
+    cursor: pointer;
 }
 
 .btn1 {
@@ -73,227 +300,40 @@
 
 .btn1:hover,
 .btn2:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 0 2.3px var(--royal-blue);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0 0 2.5px var(--royal-blue), 0 8px 20px rgba(30, 58, 138, 0.2);
 }
 
-/** mission  */
-.article {
-    background-color: var(--mission);
+.btn1::before,
+.btn2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
 }
 
-.mission {
-    color: var(--royal-blue);
-    padding: 2rem 0;
-    font-size: 1.33rem;
-    font-family: "Cormorant Garamond", serif;
+.btn1:hover::before,
+.btn2:hover::before {
+    left: 100%;
 }
 
-
-/** background  */
-.background-cont {
-    margin-top: 3rem;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.white-anchor {
+    color: white;
 }
 
-.background-left {
-    background-color: var(--background);
-    padding: 1rem;
-    border-radius: 20px;
-    width: 32%;
-}
-
-.bg-boxes {
-    margin: 1rem;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 10px;
-}
-
-.bg-heading {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.bg-heading,
-.bg-para {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--royal-blue);
-}
-
-.background-right {
-    width: 50%;
-}
-
-.about-me-btn {
-    margin: 0;
-    border-radius: 10px;
-    margin-top: 1rem;
-}
-
-
-/** projects  */
-.projects {
-    background-color: var(--background);
-}
-
-.project-cont {
-    margin-top: 5rem;
-}
-
-.project-heading {
-    text-align: center;
-    padding: 3rem 0;
-    margin-bottom: 0;
-}
-
-.project-heading::after {
-    transform: scale(0);
-}
-
-.project-list {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 4rem;
-}
-
-.individual-project-boxes {
-    box-shadow: 0 0 0 5.5px var(--neutral-blue);
-    padding: 1.5rem;
-    border-radius: 10px;
-    background-color: white;
-
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.royal-anchor {
+    color: black;
 }
 
 .project-name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    font-family: "Unna", serif;
-    padding-bottom: 1rem;
     position: relative;
-    color: var(--touch-btn);
-}
-
-.project-intro {
-    font-size: 1.1rem;
-    font-weight: 400;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.project-github {
-    background-color: var(--background);
-    margin: 1rem 0;
-}
-
-.more-projects-cont {
-    display: flex;
-    justify-content: center;
-}
-
-.more-projects-btn {
-    font-size: 1.1rem;
-    margin-top: 3rem;
-}
-
-
-/** Hobbies  */
-.hobbies-cont {
-    margin-top: 5rem;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.hobbies-left {
-    width: 40%;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.hobbies-heading {
-    text-align: center;
-}
-
-.hobbies-right {
-    width: 50%;
-}
-
-.hobbies-right {
-    display: flex;
-    flex-direction: column;
-
-    gap: 2rem;
-}
-
-.hobby-name {
-    padding: 6px 20px;
-    background-color: var(--background);
-    border: 3px dashed var(--royal-blue);
-    border-radius: 30px;
-    font-size: 1.2rem;
-    font-family: "Unna", serif;
+    display: inline-block;
 }
 
 .individual-hobby {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    align-items: start;
+    cursor: pointer;
 }
-
-.hobby-intro {
-    font-size: 1.1rem;
-    padding-left: .4rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-/** contact */
-.contact {
-    background-color: var(--background);
-}
-
-.contact-cont {
-    margin-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-.contact-heading::after {
-    transform: scale(0);
-}
-
-.contact-heading {
-    text-align: center;
-    padding: 2rem 0;
-    margin-bottom: 0;
-}
-
-.contact-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 1rem;
-}
-
-.contact-name {
-    font-weight: 500;
-    font-size: 1.2rem;
-    font-family: "Unna", serif;
-}
-
-.contact-value {
-    font-size: 1.1rem;
-    text-decoration: underline;
-}
-
-
-

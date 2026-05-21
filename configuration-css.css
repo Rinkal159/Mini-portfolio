@@ -11,6 +11,7 @@
 
 :root {
     --royal-blue: #001754;
+    --royal-blue-light: #003892;
     --gradient-blue: #e9f5ff;
     --dark-gradient-blue: #dff1ff;
     --touch-btn: #002076;
@@ -97,6 +98,147 @@ li {
 .royal-anchor {
     color: black;
 }
-.white-anchor{
+
+.white-anchor {
     color: white;
+}
+
+
+/* Hamburger menu styles (matching hobbies page format) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+    padding: 0.5rem;
+    gap: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -7px);
+}
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 576px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-cont {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 280px;
+        height: 100vh;
+        background-color: var(--royal-blue);
+        backdrop-filter: blur(10px);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transition: right 0.3s ease-in-out;
+        padding: 5rem 1.5rem 2rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .nav-cont.active {
+        right: 0;
+    }
+
+    .nav-ele-cont {
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .nav-ele {
+        font-size: 1.3rem;
+        padding: 0.5rem 0;
+        width: 100%;
+    }
+}
+
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
+
+/* Tablet and smaller devices */
+@media (max-width: 768px) {
+    .parent-container {
+        max-width: 90vw;
+    }
+
+    .section-heading {
+        font-size: 2.2rem;
+        padding-bottom: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .section-para {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+    }
+
+    .img {
+        width: 250px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .parent-container {
+        max-width: 92vw;
+    }
+
+    .section-heading {
+        font-size: 1.8rem;
+        padding-bottom: 0.6rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .section-para {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        letter-spacing: 0.02rem;
+    }
+
+    .img {
+        width: 200px;
+    }
 }

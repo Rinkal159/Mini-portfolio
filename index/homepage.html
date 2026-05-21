@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="homepage.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Rinkal Singapuri | Backend Developer</title>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../header-footer.css">
     <link rel="stylesheet" href="../configuration-css.css">
-    <title>My Webpage</title>
+    <link rel="stylesheet" href="homepage.css">
 </head>
 
-<body>
-    <!-- Header -->
+<body class="bg-[#e9f5ff] overflow-x-hidden antialiased">
+
+    <!-- Header (exactly as original, uses header-footer.css classes) -->
     <header class="header">
         <div class="parent-container header-cont">
             <h1>
                 <i class="fa-solid fa-less-than"></i><span class="heading">RINKAL SINGAPURI /</span><i
                     class="fa-solid fa-greater-than"></i>
             </h1>
-            <nav class="nav-cont">
+            <!-- Hamburger Button -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-cont" id="navMenu">
                 <ul class="nav-ele-cont">
                     <li><a class="nav-ele active" href="#">Home</a></li>
                     <li><a class="nav-ele" href="/about-me/about-me.html">About me</a></li>
@@ -36,195 +42,204 @@
         </div>
     </header>
 
-    <!-- Hero section -->
+    <!-- Overlay for mobile menu -->
+    <div id="navOverlay" class="nav-overlay"></div>
+
+    <!-- Hero section: original HTML with Tailwind utilities only to preserve flex behavior + responsive, but remaining class structure intact -->
     <div class="main-cont">
-        <div class="main-flex parent-container">
+        <div
+            class="main-flex parent-container flex flex-col lg:flex-row justify-between items-center h-auto lg:h-[70vh] my-16 lg:my-0 lg:mt-16 lg:mb-16">
             <!-- left -->
-            <div class="main-left">
-                <div class="intro">
-                    Hey! I'm Rinkal
-                </div>
-                <div class="prof">
-                    <span class="span">Back</span>end Developer
-                </div>
-                <div class="desc">
-                    I build the logic behind the websites - APIs, databases, and everything that makes things work.
-                    I
-                    like building the brain of applications. I enjoy working with APIs, handling data, and improving my
-                    skills by solving real problems step by step.
+            <div class="main-left w-full lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
+                <div class="intro font-['Unna',serif] text-xl font-medium tracking-wide leading-relaxed px-2">Hey! I'm
+                    Rinkal
                 </div>
 
-                <div class="btns">
+                <div
+                    class="prof font-['Cormorant_Garamond',serif] italic text-5xl md:text-7xl lg:text-8xl font-normal text-[var(--royal-blue)] pb-4 inline-block transition-all duration-300">
+                    <span class="font-bold">Back</span>end Developer
+                </div>
+                <div class="desc font-['Unna',serif] text-xl font-medium tracking-wide leading-relaxed px-2 mt-2">I
+                    build the logic behind the websites - APIs, databases, and everything that makes things work. I like
+                    building the brain of applications. I enjoy working with APIs, handling data, and improving my
+                    skills by solving real problems step by step.</div>
+                <div class="btns flex justify-center lg:justify-start gap-2 flex-wrap mt-4">
                     <div class="btn1"><a class="white-anchor" href="#contact">Get in touch</a></div>
                     <div class="btn2"><a class="royal-anchor" href="../projects/projects.html">View projects</a></div>
                 </div>
             </div>
-
             <!-- right -->
-            <div class="main-right">
-                <img class="img" src="../image/1.jpg" alt="Rinkal Singapuri">
+            <div class="main-right static lg:absolute lg:right-[8%] text-center">
+                <img class="img w-64 md:w-80 lg:w-[400px] mx-auto" src="../image/1.jpg" alt="Rinkal Singapuri">
             </div>
         </div>
     </div>
 
-    <!-- background -->
+    <!-- About section (background) -->
     <section class="background">
-        <div class="background-cont parent-container">
-
+        <div class="background-cont parent-container flex flex-col lg:flex-row justify-around items-center mt-12 gap-8">
             <!-- background left -->
-            <div class="background-left">
-                <div class="skills bg-boxes">
-                    <p class="bg-heading">Skills</p>
-                    <p class="bg-para">Programming skills, Backend skills, Database skills, API skills</p>
+            <div
+                class="background-left w-full lg:w-[32%] bg-[var(--background)] p-4 rounded-2xl transition-all duration-300">
+                <div class="skills bg-boxes bg-white m-4 p-4 rounded-lg transition-all relative overflow-hidden">
+                    <p class="bg-heading text-[var(--royal-blue-light)] font-semibold text-lg">Skills</p>
+                    <p class="bg-para text-[var(--royal-blue)]">Programming skills, Backend skills, Database skills, API
+                        skills</p>
                 </div>
-                <div class="interests bg-boxes">
-                    <p class="bg-heading">Interests</p>
-                    <p class="bg-para">Solving new problems yet finding best solutions for existing ones and learning
-                        new technologies
+                <div class="interests bg-boxes bg-white m-4 p-4 rounded-lg transition-all">
+                    <p class="bg-heading text-[var(--royal-blue-light)] font-semibold text-lg">Interests</p>
+                    <p class="bg-para text-[var(--royal-blue)]">Solving new problems yet finding best solutions for
+                        existing ones and learning new technologies</p>
+                </div>
+                <div class="goals bg-boxes bg-white m-4 p-4 rounded-lg transition-all">
+                    <p class="bg-heading text-[var(--royal-blue-light)] font-semibold text-lg">Goals</p>
+                    <p class="bg-para text-[var(--royal-blue)]">to become a skilled backend developer who can build
+                        efficient, scalable, and reliable systems. Keep learning and improving as a backend developer
                     </p>
                 </div>
-                <div class="goals bg-boxes">
-                    <p class="bg-heading">Goals</p>
-                    <p class="bg-para">to become a skilled backend developer who can build efficient, scalable, and
-                        reliable systems.
-                        Keep learning and improving as a backend developer</p>
-                </div>
             </div>
-
-            <!-- backgrund right -->
-            <div class="background-right">
-                <h2 class="section-heading special-underline">About <span class="span">me</span></h2>
-                <p class="section-para">I’m a backend developer in progress who enjoys building the logic behind
-                    applications.
-                    I like working with APIs, databases, and solving real-world problems through code.</p>
+            <!-- background right -->
+            <div class="background-right w-full lg:w-1/2 transition-all duration-300">
+                <h2
+                    class="section-heading special-underline about-heading transition duration-300 font-['Cormorant_Garamond',serif] italic text-4xl md:text-5xl pb-4 mb-8 relative transition-transform">
+                    About <span class="span font-bold">me</span></h2>
+                <p class="section-para desc font-['Unna',serif] text-xl font-medium italic tracking-wide">I'm a backend
+                    developer in progress who enjoys building the logic behind applications. I like working with APIs,
+                    databases, and solving real-world problems through code.</p>
                 <br>
-                <p class="section-para">I’m currently learning and improving my backend development skills by working
-                    on practical projects
-                    and exploring how systems work behind the scenes. From handling data to creating efficient
-                    server-side logic, I focus on writing clean and maintainable code. I enjoy problem-solving and
-                    debugging, and I see every challenge as an opportunity to grow.</p>
-
-                <div class="btn2 about-me-btn"><a class="royal-anchor" href="../about-me/about-me.html">More About me</a></div>
-
+                <p class="section-para desc font-['Unna',serif] text-xl font-medium italic tracking-wide">I'm currently
+                    learning and improving my backend development skills by working on practical projects and exploring
+                    how systems work behind the scenes. From handling data to creating efficient server-side logic, I
+                    focus on writing clean and maintainable code. I enjoy problem-solving and debugging, and I see every
+                    challenge as an opportunity to grow.</p>
+                <div class="btn2 more-projects-btn inline-block mt-4"><a class="royal-anchor"
+                        href="../about-me/about-me.html">More About me</a></div>
             </div>
-
-
         </div>
     </section>
 
     <!-- projects -->
-    <section class="projects">
-        <div class="project-cont parent-container">
-            <h2 class="section-heading project-heading">Projects</h2>
-            <div class="project-list">
-
-                <!-- first project -->
-                <div class="project-one individual-project-boxes">
-                    <div class="project-name special-underline">DevSphere</div>
-                    <div class="project-intro ">A modern web-based platform that helps developers connect, collaborate,
-                        and grow together. It is built with a strong focus on clean UI, smooth user experience, and
-                        real-world application logic. </div>
-                    <div class="project-github btn2"><a class="royal-anchor" href="https://github.com/Rinkal159/DevSphere_Backend">Github Ref</a></div>
-                </div>
-
-                <!-- second project -->
-                <div class="project-two individual-project-boxes">
-                    <div class="project-name special-underline">AuthStack</div>
-                    <div class="project-intro">A secure authentication backend to protect user data and ensure
-                        reliability. Implemented strong password security using bcrypt hashing along with JWT-based
-                        authentication for safe user sessions. </div>
-                    <div class="project-github btn2"><a class="royal-anchor" href="https://github.com/Rinkal159/AuthStack">Github Ref</a></div>
-                </div>
-
-                <!-- third project -->
-                <div class="project-three individual-project-boxes" style="border-color: #38a169;">
-                    <div class="project-name special-underline">TaskFlow</div>
-                    <div class="project-intro">An object-oriented backend that supports scalable task management with
-                        full CRUD operations. Integrated secure authentication using JWT along with bcrypt password
-                        hashing to manage user sessions safely.
+    <section class="projects bg-[var(--background)]">
+        <div class="project-cont parent-container mt-16">
+            <h2 class="section-heading project-heading text-center pt-12 pb-0 mb-0 transition-all">Projects</h2>
+            <div class="project-list flex flex-col lg:flex-row justify-evenly gap-12 flex-wrap mt-8">
+                <!-- first -->
+                <div
+                    class="project-one individual-project-boxes shadow-[0_0_0_5.5px_var(--neutral-blue)] p-6 rounded-xl bg-white flex flex-col gap-4 transition-all duration-300 flex-1 min-w-[250px]">
+                    <div
+                        class="project-name special-underline text-2xl font-semibold font-['Unna',serif] pb-4 relative text-[var(--touch-btn)]">
+                        DevSphere</div>
+                    <div class="project-intro desc text-lg font-['Segoe_UI',Tahoma,Geneva,Verdana,sans-serif]">A modern
+                        web-based platform that helps developers connect, collaborate, and grow together. It is built
+                        with a strong focus on clean UI, smooth user experience, and real-world application logic.</div>
+                    <div class="project-github btn2 bg-[var(--background)] inline-block text-center"><a
+                            class="royal-anchor" href="https://github.com/Rinkal159/DevSphere_Backend">Github Ref</a>
                     </div>
-                    <div class="project-github btn2"><a class="royal-anchor" href="https://github.com/Rinkal159/TaskFlow">Github Ref</a></div>
+                </div>
+                <!-- second -->
+                <div
+                    class="project-two individual-project-boxes shadow-[0_0_0_5.5px_var(--neutral-blue)] p-6 rounded-xl bg-white flex flex-col gap-4 transition-all flex-1 min-w-[250px]">
+                    <div
+                        class="project-name special-underline text-2xl font-semibold font-['Unna',serif] pb-4 relative text-[var(--touch-btn)]">
+                        AuthStack</div>
+                    <div class="project-intro desc text-lg">A secure authentication backend to protect user data and
+                        ensure reliability. Implemented strong password security using bcrypt hashing along with
+                        JWT-based authentication for safe user sessions.</div>
+                    <div class="project-github btn2 bg-[var(--background)] inline-block text-center"><a
+                            class="royal-anchor" href="https://github.com/Rinkal159/AuthStack">Github Ref</a></div>
+                </div>
+                <!-- third -->
+                <div class="project-three individual-project-boxes shadow-[0_0_0_5.5px_var(--neutral-blue)] p-6 rounded-xl bg-white flex flex-col gap-4 transition-all flex-1 min-w-[250px]"
+                    style="border-color: #38a169;">
+                    <div
+                        class="project-name special-underline text-2xl font-semibold font-['Unna',serif] pb-4 relative text-[var(--touch-btn)]">
+                        TaskFlow</div>
+                    <div class="project-intro desc text-lg">An object-oriented backend that supports scalable task
+                        management with full CRUD operations. Integrated secure authentication using JWT along with
+                        bcrypt password hashing to manage user sessions safely.</div>
+                    <div class="project-github btn2 bg-[var(--background)] inline-block text-center"><a
+                            class="royal-anchor" href="https://github.com/Rinkal159/TaskFlow">Github Ref</a></div>
                 </div>
             </div>
-
-            <div class="more-projects-cont">
-                <div class="btn2 more-projects-btn"><a class="royal-anchor" href="../projects/projects.html">More Projects</a></div>
-
+            <div class="more-projects-cont flex justify-center mt-12">
+                <div class="btn2 more-projects-btn"><a class="royal-anchor" href="../projects/projects.html">More
+                        Projects</a></div>
             </div>
         </div>
     </section>
 
     <!-- hobbies -->
     <div class="hobbies">
-        <div class="hobbies-cont parent-container">
-
-            <!-- hobbies-left -->
-            <div class="hobbies-left">
-                <h2 class="section-heading hobbies-heading special-underline">Hobbies & Certifications</h2>
-                <p class="section-para hobbies-para">I enjoy spending my free time on creative and thoughtful
-                    activities like story writing, sketching, and playing mind games. Story writing helps me express my
-                    ideas and imagination, while sketching allows me to be creative in a visual way. I also like mind
-                    games because they challenge my thinking and improve my problem-solving skills, keeping my mind
-                    active and sharp.
-                </p>
-                <div class="btn2 about-me-btn"><a class="royal-anchor" href="../hobbies/hobbies.html">More Hobbies & Certifications</a></div>
-
-
+        <div class="hobbies-cont parent-container flex flex-col lg:flex-row justify-between items-center mt-20 gap-12">
+            <div class="hobbies-left w-full lg:w-2/5 transition-all">
+                <h2
+                    class="section-heading hobbies-heading transition duration-300 special-underline text-center lg:text-left">
+                    Hobbies &amp;
+                    Certifications</h2>
+                <p class="section-para hobbies-para desc font-['Unna',serif] text-xl font-medium italic">I enjoy
+                    spending my free time on creative and thoughtful activities like story writing, sketching, and
+                    playing mind games. Story writing helps me express my ideas and imagination, while sketching allows
+                    me to be creative in a visual way. I also like mind games because they challenge my thinking and
+                    improve my problem-solving skills, keeping my mind active and sharp.</p>
+                <div class="btn2 more-projects-btn inline-block mt-6"><a class="royal-anchor"
+                        href="../hobbies/hobbies.html">More Hobbies &amp; Certifications</a></div>
             </div>
-
-
-            <!-- hobbies-right -->
-            <div class="hobbies-right">
-                <div class="hobby-first individual-hobby">
-                    <span class="hobby-name">Story Writing</span>
-                    <div class="hobby-intro">I enjoy writing stories where I can turn random ideas into something
-                        meaningful and creative.</div>
+            <div class="hobbies-right w-full lg:w-1/2 flex flex-col gap-8">
+                <div class="hobby-first individual-hobby flex flex-col items-start gap-2">
+                    <span
+                        class="hobby-name inline-block px-5 py-1.5 bg-[var(--background)] border-3 border-dashed border-[var(--royal-blue)] rounded-full text-xl font-['Unna',serif] transition-all duration-300">Story
+                        Writing</span>
+                    <div class="hobby-intro text-lg pl-1">I enjoy writing stories where I can turn random ideas into
+                        something meaningful and creative.</div>
                 </div>
-                <div class="hobby-second individual-hobby">
-                    <span class="hobby-name">Sketching</span>
-                    <div class="hobby-intro">I enjoy sketching as a way to express ideas without using words.</div>
+                <div class="hobby-second individual-hobby flex flex-col items-start gap-2">
+                    <span
+                        class="hobby-name inline-block px-5 py-1.5 bg-[var(--background)] border-3 border-dashed border-[var(--royal-blue)] rounded-full text-xl font-['Unna',serif] transition-all duration-300">Sketching</span>
+                    <div class="hobby-intro text-lg pl-1">I enjoy sketching as a way to express ideas without using
+                        words.</div>
                 </div>
-                <div class="hobby-third individual-hobby">
-                    <span class="hobby-name">Mind Games</span>
-                    <div class="hobby-intro">I enjoy playing mind games because they challenge the way I think and keep
-                        my brain active.They’re a fun way to improve my focus, logic, and problem-solving skills.</div>
+                <div class="hobby-third individual-hobby flex flex-col items-start gap-2">
+                    <span
+                        class="hobby-name inline-block px-5 py-1.5 bg-[var(--background)] border-3 border-dashed border-[var(--royal-blue)] rounded-full text-xl font-['Unna',serif] transition-all duration-300">Mind
+                        Games</span>
+                    <div class="hobby-intro text-lg pl-1">I enjoy playing mind games because they challenge the way I
+                        think and keep my brain active.They're a fun way to improve my focus, logic, and problem-solving
+                        skills.</div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <!-- contact -->
-    <div id="contact" class="contact">
-        <div class="contact-cont parent-container">
-            <div class="section-heading contact-heading">Let's Connect</div>
-            <div class="contact-list">
-                <div class="individual-contact">
-                    <span class="contact-name">Email: </span><a class="contact-value"
+    <div id="contact" class="contact bg-[var(--background)]">
+        <div class="contact-cont parent-container mt-16 pb-20 transition-all">
+            <div class="section-heading contact-heading text-center pt-8 pb-4 mb-0 text-4xl md:text-5xl">Let's Connect
+            </div>
+            <div class="contact-list flex flex-col items-center gap-4 mt-6">
+                <div class="individual-contact transition-all cursor-pointer">
+                    <span class="contact-name font-medium text-xl font-['Unna',serif]">Email: </span><a
+                        class="contact-value text-lg underline transition-all"
                         href="mailto:rinkals.9856@gmail.com">rinkals.9856@gmail.com</a>
-
                 </div>
-                <div class="individual-contact">
-                    <span class="contact-name">Github: </span><a class="contact-value"
+                <div class="individual-contact transition-all cursor-pointer">
+                    <span class="contact-name font-medium text-xl font-['Unna',serif]">Github: </span><a
+                        class="contact-value text-lg underline transition-all"
                         href="https://github.com/Rinkal159">https://github.com/Rinkal159</a>
-
                 </div>
-                <div class="individual-contact">
-                    <span class="contact-name">LinkedIn: </span><a class="contact-value"
+                <div class="individual-contact transition-all cursor-pointer">
+                    <span class="contact-name font-medium text-xl font-['Unna',serif]">LinkedIn: </span><a
+                        class="contact-value text-lg underline transition-all"
                         href="linkedin.com/in/rinkal-singapuri">linkedin.com/in/rinkal-singapuri</a>
-
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- footer -->
+    <!-- footer (unchanged, uses header-footer.css) -->
     <div class="footer">
         <div class="footer-cont">
-            <div class="author">
-                <i class="fa-solid fa-less-than icon-footer"></i><span class="author">Rinkal Singapuri /</span><i
-                    class="fa-solid fa-greater-than icon-footer"></i>
-            </div>
+            <div class="author"><i class="fa-solid fa-less-than icon-footer"></i><span class="author">Rinkal Singapuri
+                    /</span><i class="fa-solid fa-greater-than icon-footer"></i></div>
             <div class="quick-links">
                 <ul class="footer-link-cont">
                     <li><a class="footer-links active-footer" href="#">Home</a></li>
@@ -233,13 +248,69 @@
                     <li><a class="footer-links" href="/hobbies/hobbies.html">Hobbies</a></li>
                 </ul>
             </div>
-            <hr>
-            <div class="copy-right">
-                © 2026 Rinkal. All rights reserved.
-            </div>
+            <hr class="w-full my-3">
+            <div class="copy-right">© 2026 Rinkal. All rights reserved.</div>
         </div>
     </div>
 
+    <!-- scroll reveal + hamburger menu script -->
+    <script>
+        // Scroll reveal animation trigger
+        const revealElements = document.querySelectorAll('.main-flex, .background-cont, .individual-project-boxes, .hobbies-cont, .contact-cont, .background-left, .background-right, .hobbies-left, .hobbies-right, .bg-boxes, .individual-hobby');
+        function checkReveal() {
+            revealElements.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                const winH = window.innerHeight;
+                if (top < winH - 100) {
+                    el.classList.add('revealed');
+                }
+            });
+        }
+        window.addEventListener('DOMContentLoaded', checkReveal);
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('resize', checkReveal);
+
+        // Hamburger Menu Toggle (matching hobbies page format)
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.getElementById('hamburgerBtn');
+            const navMenu = document.getElementById('navMenu');
+            const overlay = document.getElementById('navOverlay');
+
+            function toggleMenu() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            }
+
+            function closeMenu() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (hamburger) {
+                hamburger.addEventListener('click', toggleMenu);
+            }
+            if (overlay) {
+                overlay.addEventListener('click', closeMenu);
+            }
+
+            // Close menu when a nav link is clicked
+            const navLinks = document.querySelectorAll('.nav-ele');
+            navLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            // Close menu on window resize if screen becomes larger than 576px
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 576 && navMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
